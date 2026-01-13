@@ -9,7 +9,7 @@ import { CustomerService } from '../CustomerService';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './viewmyprofile.html',
-  styleUrls: ['./viewmyprofile.css'], // ⚠ corrected plural
+  styleUrls: ['./viewmyprofile.css'],
 })
 export class ViewmyprofileComponent {
 
