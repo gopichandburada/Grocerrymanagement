@@ -1,0 +1,73 @@
+<div class="product-form-container">
+  <h1>Product Management</h1>
+
+  <!-- Bulk Upload Section -->
+  <div class="section-title">Bulk Upload</div>
+  <div class="controls">
+    <input type="file" (change)="onFileChange($event)" accept=".xlsx,.xls" />
+    <button (click)="uploadBulk()" [disabled]="!prodarr.length">Upload Excel</button>
+  </div>
+
+  <!-- Normal Form Section -->
+  <div class="section-title">Add Single Product</div>
+  <div class="admin-container">
+    <form [formGroup]="ProductForm" (ngSubmit)="createProduct()" novalidate>
+
+      <!-- Product Name -->
+      <div class="form-group">
+        <label>Product Name:</label>
+        <input type="text" formControlName="productname" placeholder="Enter Product Name">
+        <div class="error" *ngIf="ProductForm.get('productname')?.touched && ProductForm.get('productname')?.invalid">
+          <small *ngIf="ProductForm.get('productname')?.errors?.['required']">Product name is required.</small>
+          <small *ngIf="ProductForm.get('productname')?.errors?.['minlength']">Minimum 3 characters required.</small>
+          <small *ngIf="ProductForm.get('productname')?.errors?.['pattern']">Only alphabets and spaces allowed.</small>
+        </div>
+      </div>
+
+      <!-- Category -->
+      <div class="form-group">
+        <label>Category:</label>
+        <select id="category" type="text" formControlName="category">
+          <option value="" disabled selected>Select Category</option>
+          <option *ngFor="let cat of categories">{{cat}}</option>
+        </select>
+      </div>
+
+      <!-- Quantity -->
+      <div class="form-group">
+        <label>Quantity:</label>
+        <input type="number" formControlName="quantity" placeholder="Enter Quantity">
+        <div class="error" *ngIf="ProductForm.get('quantity')?.touched && ProductForm.get('quantity')?.invalid">
+          <small *ngIf="ProductForm.get('quantity')?.errors?.['required']">Quantity is required.</small>
+          <small *ngIf="ProductForm.get('quantity')?.errors?.['min']">Must be at least 1.</small>
+          <small *ngIf="ProductForm.get('quantity')?.errors?.['max']">Must be less than 100.</small>
+          <small *ngIf="ProductForm.get('quantity')?.errors?.['pattern']">Only Numbers are allowed.</small>
+        </div>
+      </div>
+
+      <!-- Price -->
+      <div class="form-group">
+        <label>MRP:</label>
+        <input type="number" formControlName="price" placeholder="Enter Price">
+        <div class="error" *ngIf="ProductForm.get('price')?.touched && ProductForm.get('price')?.invalid">
+          <small *ngIf="ProductForm.get('price')?.errors?.['required']">Price is required.</small>
+          <small *ngIf="ProductForm.get('price')?.errors?.['min']">Must be greater than 0.</small>
+          <small *ngIf="ProductForm.get('price')?.errors?.['max']">Must be less than 100000</small>
+          <small *ngIf="ProductForm.get('price')?.errors?.['pattern']">Only Numbers are allowed.</small>
+        </div>
+      </div>
+
+      <!-- Image URL -->
+      <div class="form-group">
+        <label>Image URL:</label>
+        <input type="text" formControlName="url" placeholder="Enter Image URL">
+        <div class="error" *ngIf="ProductForm.get('url')?.touched && ProductForm.get('url')?.invalid">
+          <small *ngIf="ProductForm.get('url')?.errors?.['required']">URL is required.</small>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" [disabled]="ProductForm.invalid">Submit</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+
+/* Common navbar styles */
+.navbar {
+  background-color: #2c3e50;  /* dark navy */
+  padding: 12px 20px;
+  margin-bottom: 20px;
+}
+
+.navbar a {
+  color: #ecf0f1; /* light text */
+  text-decoration: none;
+  margin-right: 18px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 4px;
+  cursor: pointer;
+}
+
+.navbar a:hover {
+  color: #1abc9c; /* teal hover */
+  border-bottom: 2px solid #1abc9c;
+}
+
+.navbar a:last-child {
+  margin-right: 0;
+}
+
+/* Admin specific styling */
+.admin-navbar {
+  background-color: #34495e; /* darker shade */
+}
+
+/* Customer specific styling */
+.customer-navbar {
+  background-color: #3c6382; /* bluish shade */
+}

@@ -1,0 +1,61 @@
+<div class="container">
+  <!-- Search & Filter Toolbar -->
+  <div class="filter-search-bar">
+    <div class="filter">
+      <label for="categorySelect">Filter by Category:</label>
+      <select id="categorySelect" [(ngModel)]="selectCategory" (change)="loadProducts(selectCategory)">
+        <option value="" disabled selected>Select Category</option>
+        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+      </select>
+    </div>
+
+    <div class="search">
+      <input type="text" [(ngModel)]="keyword" placeholder="🔍 Search Products..." />
+      <button (click)="search()">Search</button>
+    </div>
+  </div>
+
+  <!-- 🌟 Featured Products -->
+  <div class="featured-section" *ngIf="featuredProducts.length > 0">
+    <h2 class="section-title">🌟 Featured Products</h2>
+    <div class="product-grid">
+      <div class="product-card" *ngFor="let product of featuredProducts">
+        <div class="card-body">
+          <div class="product-img-container">
+            <img src="{{product.url}}" alt="Product Image" class="product-img">
+          </div>
+
+          <h5 class="card-title">{{ product.productname }}</h5>
+          <p class="card-text"><b>Category:</b> {{ product.category }}</p>
+          <p class="card-text"><b>Quantity:</b> {{ product.quantity }}</p>
+          <p class="card-text"><b>Price:</b> ₹{{ product.price }}</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary" (click)="UpdateProduct(product.productid)">✏️ Update</button>
+          <button class="btn btn-danger" (click)="DeleteProduct(product.productid)">🗑️ Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category-wise Products -->
+  <div *ngFor="let cat of categories" class="category-section">
+    <h2 class="section-title">{{ cat }}</h2>
+    <div class="product-grid">
+      <div class="product-card" *ngFor="let product of getFilteredOProducts(cat)">
+        <div class="card-body">
+          <div class="product-img-container">
+            <img src="{{product.url}}" alt="Product Image" class="product-img">
+          </div>
+          <h5 class="card-title">{{ product.productname }}</h5>
+          <p class="card-text"><b>Quantity:</b> {{ product.quantity }}</p>
+          <p class="card-text"><b>Price:</b> ₹{{ product.price }}</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary" (click)="UpdateProduct(product.productid)">✏️ Update</button>
+          <button class="btn btn-danger" (click)="DeleteProduct(product.productid)">🗑️ Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

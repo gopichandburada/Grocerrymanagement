@@ -1,0 +1,42 @@
+<div class="login-container">
+  <h2>Login</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="Login()" class="login-form">
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">User Email</label>
+      <input 
+        type="text" 
+        id="email" 
+        formControlName="email" 
+        placeholder="Enter your email"
+      />
+      <div class="error" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+        <small *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</small>
+        <small *ngIf="loginForm.get('email')?.errors?.['email']">Enter a valid email.</small>
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input 
+        type="password" 
+        id="password" 
+        formControlName="password" 
+        placeholder="Enter your password"
+      />
+      <div class="error" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+        <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
+        <small *ngIf="loginForm.get('password')?.errors?.['maxlength']">Password cannot exceed 20 characters.</small>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form>
+
+  <button class = "register" (click) = "goToRegister()">Not a User? Register Here</button>
+
+</div>

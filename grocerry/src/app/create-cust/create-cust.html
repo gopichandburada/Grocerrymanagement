@@ -1,0 +1,81 @@
+<div class="form-container">
+  <form [formGroup]="myForm" (ngSubmit)="createCust()" class="cust-form">
+
+    <!-- Customer Name -->
+    <div class="form-group">
+      <label for="name">Customer Name:</label>
+      <input id="name" type="text" formControlName="customername" />
+      <div class="error" *ngIf="myForm.get('customername')?.touched && myForm.get('customername')?.invalid">
+        <small *ngIf="myForm.get('customername')?.errors?.['required']">Name is required.</small>
+        <small *ngIf="myForm.get('customername')?.errors?.['minlength']">Name must be at least 3 characters.</small>
+        <small *ngIf="myForm.get('customername')?.errors?.['maxlength']">Name cannot exceed 30 characters.</small>
+        <small *ngIf="myForm.get('customername')?.errors?.['pattern']">Only alphabets and spaces allowed.</small>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Customer Email:</label>
+      <input id="email" type="text" formControlName="email" />
+      <div class="error" *ngIf="myForm.get('email')?.touched && myForm.get('email')?.invalid">
+        <small *ngIf="myForm.get('email')?.errors?.['required']">Email is required.</small>
+        <small *ngIf="myForm.get('email')?.errors?.['email']">Enter a valid email.</small>
+      </div>
+      <div class="error" *ngIf="msg === 'Email already exists. Please use a different one.'">
+        <small>{{ msg }}</small>
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <label for="password">Customer Password:</label>
+      <input id="password" type="password" formControlName="password" />
+      <div class="error" *ngIf="myForm.get('password')?.touched && myForm.get('password')?.invalid">
+        <small *ngIf="myForm.get('password')?.errors?.['required']">Password is required.</small>
+        <small *ngIf="myForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters.</small>
+        <small *ngIf="myForm.get('password')?.errors?.['maxlength']">Password cannot exceed 20 characters.</small>
+        <small *ngIf="myForm.get('password')?.errors?.['pattern']">
+          Must contain at least 1 uppercase letter, 1 number, and 1 special character.
+        </small>
+      </div>
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password:</label>
+      <input id="confirmPassword" type="password" formControlName="confirmPassword" />
+      <div class="error" *ngIf="myForm.get('confirmPassword')?.touched && myForm.hasError('passwordMismatch')">
+        <small>Passwords do not match.</small>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="form-group">
+      <label for="address">Customer Address:</label>
+      <input id="address" type="text" formControlName="address" />
+      <div class="error" *ngIf="myForm.get('address')?.touched && myForm.get('address')?.invalid">
+        <small *ngIf="myForm.get('address')?.errors?.['required']">Address is required.</small>
+        <small *ngIf="myForm.get('address')?.errors?.['maxlength']">Address cannot exceed 50 characters.</small>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="form-group">
+      <label for="mobile">Customer Mobile number:</label>
+      <input id="mobile" type="text" formControlName="mobile" />
+      <div class="error" *ngIf="myForm.get('mobile')?.touched && myForm.get('mobile')?.invalid">
+        <small *ngIf="myForm.get('mobile')?.errors?.['required']">Mobile number is required.</small>
+        <small *ngIf="myForm.get('mobile')?.errors?.['pattern']">Enter a valid 10-digit number.</small>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+    
+  </form>
+
+    <button class = "login" (click) = "goToLog()">Already a User? Login Here</button>
+
+  <!-- Message -->
+  <p class="msg">{{ msg }}</p>
+</div>

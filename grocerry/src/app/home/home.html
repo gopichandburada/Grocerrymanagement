@@ -1,0 +1,35 @@
+<div class="container-sf">
+<div class="filter-search-bar">
+  <div class="filter">
+    <label for="customerSelect">Filter by Status:</label>
+    <select id="customerSelect" [(ngModel)]="selectStatus" (change)="loadCustomers(selectStatus)">
+      <option value="" disabled selected>Select Status</option>
+      <option value="Active">Active</option>
+      <option value="Deactive">Deactive</option>
+    </select>
+  </div>
+</div>
+  <div class="search">
+      <input type="text" [(ngModel)] = "searchCustName" placeholder="🔍 Search Customers..." />
+      <button (click) = "searchName()">Search</button>
+    </div>
+</div>
+
+<table class="customer-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Last login</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of filteredCustomers">
+      <td>{{ c.customername }}</td>
+      <td>{{ c.email }}</td>
+      <td>{{ c.active === 1 ? 'Active' : 'Deactive' }}</td>
+      <td>{{ c.logincheck | date : 'yyyy-MM-dd HH:mm:ss' }}</td>
+    </tr>
+  </tbody>
+</table>  

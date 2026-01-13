@@ -1,0 +1,16 @@
+<app-header> </app-header>
+<div *ngIf="isAdmin" class="navbar admin-navbar">
+  <a routerLink="home">Admin Dashboard</a>
+  <a routerLink="addproducts">Add Product</a>
+  <a routerLink="productHome">View Products</a>
+  <a (click)="logout()">Logout</a>
+</div>
+
+<div *ngIf="isCustomer" class="navbar customer-navbar">
+  <a routerLink="viewcustomerproduct">View Products</a>
+  <a routerLink="viewcart">View My Cart</a>
+  <a routerLink="history">View My History</a>
+  <a routerLink="yourprofile">View My Profile</a>
+  <a (click)="logout()">Logout</a>
+</div>
+<router-outlet />

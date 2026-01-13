@@ -1,0 +1,107 @@
+
+
+.product-form-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 25px 0 15px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #007bff;
+  color: darkblue;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Bulk Upload Section */
+.controls {
+  background: #f8f9fa;
+  border: 2px dashed #bbb;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.controls input[type="file"] {
+  margin-right: 10px;
+}
+
+.controls button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.controls button:hover:enabled {
+  background-color: #218838;
+}
+
+/* Normal Form Section */
+.admin-container {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+button[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button[type="submit"]:hover:enabled {
+  background-color: #0056b3;
+}
+
+/* Error messages */
+.error small {
+  color: red;
+  font-size: 12px;
+}
+

@@ -1,0 +1,75 @@
+Product Added
+Product Added
+Product Added
+Product Added
+Product Added
+Product Added
+Product Added
+Product Added
+Product Added
+Product Added
+Product List is Called
+Specific Product is Called
+Product Category is retrieved
+Product List By Category is Called
+Search by Product name is Called
+Customer Added
+Customer Added
+Customer Added
+Customer Added
+Customer List Loaded
+Customer List Loaded
+Customer Added
+Customer Added
+Customer List Loaded
+Customer Added
+added to cart
+added to cart
+Customer List Loaded
+Customer List Loaded
+Customer Cart is Loaded
+added to cart
+Customer Cart is Loaded
+added to cart
+Customer Cart is Loaded
+Customer Cart is Loaded
+Customer Cart is Loaded
+Customer List Loaded
+Customer List Loaded
+Customer List Loaded
+Customer Cart is Loaded
+Customer Cart is Loaded
+Customer Cart is Loaded
+Customer Cart is Loaded
+Product List is Called
+Product Added
+Product Update is Called
+Product Update is Called
+Product List is Called
+Specific Product is Called
+Delete Product is Called
+Product Category is retrieved
+Product List By Category is Called
+Search Product List By Category is Called
+Product List is Called
+Delete Product is Called
+Product List is Called
+Activate Product is Called
+Product List is Called
+Customer List Loaded
+Customer Added
+Customer List Loaded
+Customer Profile Called
+Customer Reset Password Called
+Customer Profile Called
+Customer List Loaded
+added to cart
+added to cart
+added to cart
+added to cart
+added to cart
+added to cart
+View Cart History Called
+Customer Profile Called
+Customer List Loaded
+Customer List Loaded
