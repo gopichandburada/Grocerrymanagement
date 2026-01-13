@@ -45,7 +45,7 @@ export class LoginComponent {
       } else if (data == -2) {
         alert("Login Unsuccessful!!!");
         console.log("Unsuccessful Login");
-      } else if (data == 1000) { // 🔐 Admin login hardcoded ID
+      } else if (data == 1000) { 
         alert("Login Successful as Admin!!!");
         console.log("Admin ID:", data);
         this.route.navigate(['/home']); // admin home page
