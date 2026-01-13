@@ -6,8 +6,8 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  standalone: true, // ✅ standalone component
-  imports: [CommonModule,FormsModule], // ✅ needed for *ngIf, *ngFor in template
+  standalone: true, 
+  imports: [CommonModule,FormsModule],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
