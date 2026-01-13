@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-landingpage',
-  standalone: true, // ✅ standalone component
-  imports: [CommonModule, RouterModule], // ✅ needed for routerLink, *ngIf, *ngFor
+  standalone: true, 
+  imports: [CommonModule, RouterModule], 
   templateUrl: './landingpage.html',
   styleUrls: ['./landingpage.css'], // ⚠ corrected plural
 })
