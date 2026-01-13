@@ -7,8 +7,8 @@ import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-create-cust',
-  standalone: true, // ✅ standalone component
-  imports: [CommonModule, ReactiveFormsModule, RouterModule,FormsModule], // ✅ required modules
+  standalone: true, 
+  imports: [CommonModule, ReactiveFormsModule, RouterModule,FormsModule], 
   templateUrl: './create-cust.html',
   styleUrls: ['./create-cust.css'],
 })
