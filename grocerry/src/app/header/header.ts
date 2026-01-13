@@ -4,10 +4,10 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  standalone: true,       // ✅ correct for Angular 21
+  standalone: true,       
  imports: [CommonModule, RouterModule],
-         // ✅ can include CommonModule, RouterModule if needed
+      
   templateUrl: './header.html',
-  styleUrls: ['./header.css'], // ⚠️ must be **styleUrls**, not styleUrl
+  styleUrls: ['./header.css'], 
 })
 export class HeaderComponent { }
