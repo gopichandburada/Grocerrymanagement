@@ -12,7 +12,7 @@ import * as XLSX from 'xlsx';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './product-form.html',
-  styleUrls: ['./product-form.css'], // ⚠ corrected plural
+  styleUrls: ['./product-form.css'],
 })
 export class ProductFormComponent {
 
